@@ -25,7 +25,7 @@ public class Producer  {
 
         try {
             for (int i = 0; i < 10000; i++) {
-                producer.send(new ProducerRecord<String, String>("xargs-pratix", String.format("{Hello %d}", i)));
+                producer.send(new ProducerRecord<String, String>("test-topic", String.format("{Hello %d}", i)));
             }
         } catch (Throwable throwable) {
             System.out.printf("%s", throwable.getStackTrace());

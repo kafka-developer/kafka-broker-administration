@@ -21,10 +21,13 @@ public class SimpleProducer {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("acks", "all");
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
+        /* Body of the code to either generate the message or grab it from a database */
         for (int i = 0; i < 100; i++) {
             String key = "Key" + i;
             String message = "Enjoy Kafka-Broker-Administration" + i;
-            /* Asynchronously send a record to a topic and returns RecordMetadata */
+
+            /* Synchronously send a record to a topic and returns RecordMetadata */
+
             Future<RecordMetadata> out = producer.send(new ProducerRecord<String,
                     String>(topicName, key, message));
             String messageOut = " Topic: "+ out.get().topic() + " "+ " Partition: "+ out.get().partition() +

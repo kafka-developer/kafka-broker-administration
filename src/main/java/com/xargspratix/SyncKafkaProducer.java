@@ -27,9 +27,10 @@ public class SyncKafkaProducer {
         props.put("bootstrap.servers", "192.168.1.158:9092");
         props.put("key.serializer", "org.apache.kafka.common.serialization.LongSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("enable.idempotence", "true");
 
         long time = System.currentTimeMillis();
-
+   /* Body of the code to either generate the message or grab it from a database */
         Producer<Long, String> producer = new KafkaProducer<Long, String>(props);
         for (long i = time; i < time + msgCount; i++) {
             String message = "Enjoy Kafka-Broker-Administration" + i;
@@ -39,7 +40,7 @@ public class SyncKafkaProducer {
 
             RecordMetadata outMetadata;
             try {
-                outMetadata = producer.send(record).get();
+                outMetadata = producer.send(record).get();                   // Synchronous Send Future.get() object waits for metadata return.
                 long elapsedTime = System.currentTimeMillis() - time;
                 System.out.printf("sent record(key=%s value=%s) " + "meta(partition=%d, offset=%d) time=%d\n",
                         record.key(),record.value(), outMetadata.partition(), outMetadata.offset(), elapsedTime);

@@ -17,7 +17,7 @@ public class KafkaConsumerSample
 
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "192.168.1.158:9092");
-        properties.put("kafka.topic"      , "my-topic");
+        properties.put("kafka.topic"      , "test-topic");
         properties.put("compression.type" , "gzip");
         properties.put("key.deserializer"   , "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer" , "org.apache.kafka.common.serialization.StringDeserializer");

@@ -25,7 +25,7 @@ public class Consumer {
             consumer = new KafkaConsumer<String, String>(properties);
         }
 
-        consumer.subscribe(Arrays.asList("xargs-pratix"));
+        consumer.subscribe(Arrays.asList("test-topic"));
         int timeouts = 0;
 
         while (true) {
@@ -38,7 +38,7 @@ public class Consumer {
 
             for (ConsumerRecord record: records) {
                 switch (record.topic()) {
-                    case "xargs-pratix":
+                    case "test-topic":
                         System.out.println(record.toString());
                 }
             }
