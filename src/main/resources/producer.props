@@ -2,5 +2,5 @@ bootstrap.servers=192.168.1.158:9092
 acks=all
 key.serializer=org.apache.kafka.common.serialization.StringSerializer
 value.serializer=org.apache.kafka.common.serialization.StringSerializer
-block.on.buffer.full=true
-enable.idempotence=true
+block.on.buffer.full=false
+linger.ms=30

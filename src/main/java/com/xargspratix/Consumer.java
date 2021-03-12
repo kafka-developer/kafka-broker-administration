@@ -25,7 +25,7 @@ public class Consumer {
             consumer = new KafkaConsumer<String, String>(properties);
         }
 
-        consumer.subscribe(Arrays.asList("test-topic"));
+        consumer.subscribe(Arrays.asList("my-topic"));
         int timeouts = 0;
 
         while (true) {
