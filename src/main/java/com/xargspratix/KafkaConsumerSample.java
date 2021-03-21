@@ -17,13 +17,13 @@ public class KafkaConsumerSample
 
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "192.168.1.158:9092");
-        properties.put("kafka.topic"      , "my-topic");
+        properties.put("kafka.topic"      , "commits-offsets");
         properties.put("compression.type" , "gzip");
         properties.put("key.deserializer"   , "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer" , "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("max.partition.fetch.bytes", "2097152");
         properties.put("max.poll.records"          , "500");
-        properties.put("group.id"          , "my-group");
+        properties.put("group.id"          , "another-group");
 
         runMainLoop(args, properties);
     }
