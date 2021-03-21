@@ -12,7 +12,7 @@ public class ListingConfigs {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Properties config = new Properties();
-        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.1.158:9092");
+        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.1.158:9092,192.168.1.163:9092,192.168.1.164:9092");
         AdminClient admin = AdminClient.create(config);
         for (Node node : admin.describeCluster().nodes().get()) {
             System.out.println("-- node: " + node.id() + " --");

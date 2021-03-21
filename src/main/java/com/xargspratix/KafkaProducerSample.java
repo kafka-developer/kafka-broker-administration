@@ -28,7 +28,7 @@ public class KafkaProducerSample
         properties.put("compression.type" , "gzip");
         properties.put("key.serializer"   , "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer" , "org.apache.kafka.common.serialization.StringSerializer");
-        properties.put("kafka.topic"      , "my-topic");
+        properties.put("kafka.topic"      , "commits-offsets");
 
         runMainLoop(args, properties);
     }

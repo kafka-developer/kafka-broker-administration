@@ -13,7 +13,7 @@ public class CreateTopic {
         AdminClient admin = AdminClient.create(config);
         //creating new topic
         System.out.println("-- creating --");
-        NewTopic newTopic = new NewTopic("kafka-broker-administration-topic", 1, (short) 1);
+        NewTopic newTopic = new NewTopic("consumer-topic", 3, (short) 1);
         admin.createTopics(Collections.singleton(newTopic));
 
         //listing

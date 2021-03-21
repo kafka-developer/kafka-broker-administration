@@ -14,7 +14,7 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 
 public class SimpleProducer {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        String topicName = "test-topic";
+        String topicName = "commits-offsets";
         Properties props = new Properties();
         props.put("bootstrap.servers", "192.168.1.158:9092");
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");

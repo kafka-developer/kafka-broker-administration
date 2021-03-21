@@ -12,8 +12,8 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 public class SimpleConsumer {
     public static void main(String[] args) throws Exception {
-        String topicName = "test-topic";
-        String groupName = "CG";
+        String topicName = "commits-offsets";
+        String groupName = "testGroup";
         Properties props = new Properties();
         props.put("bootstrap.servers", "192.168.1.158:9092, 192.168.1.163:9092, 192.168.1.164:9092");
         props.put("group.id", groupName);
