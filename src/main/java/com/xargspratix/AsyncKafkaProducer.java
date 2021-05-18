@@ -22,7 +22,7 @@ public class AsyncKafkaProducer {
     static void doRunProducer(final int sendMessageCount) throws InterruptedException {
         String topicName = "test-topic5";
         Properties props = new Properties();
-        props.put("bootstrap.servers", "192.168.1.158:9092");
+        props.put("bootstrap.servers", "192.168.1.165:9092");
         props.put("key.serializer", "org.apache.kafka.common.serialization.LongSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 

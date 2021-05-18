@@ -9,9 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Created by Rahul Shukla <rahul.shukla@synerzip.com> on 5/7/16.
- */
 public class JavaProducer {
     public static void main(String[] args) throws InterruptedException {
         String topic = "test-topic";
@@ -24,6 +21,7 @@ public class JavaProducer {
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokers);
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer);
+        config.put(ProducerConfig.ACKS_CONFIG, "acks");
 
 
         KafkaProducer producer = new KafkaProducer<String, String>(config);

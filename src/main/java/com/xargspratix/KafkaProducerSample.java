@@ -44,7 +44,7 @@ public class KafkaProducerSample
 
                 Thread.sleep(1000);
                 String id = "device-" + getRandomNumberInRange(1,5);
-                producer.send(new ProducerRecord<String, String>(properties.getProperty("kafka.topic"), id, getMsg(id)));
+                producer.send(new ProducerRecord<String, String>(properties.getProperty("kafka.topic"), id, getMsg(id)));  // Sending message to the producer record
 
             }
 
